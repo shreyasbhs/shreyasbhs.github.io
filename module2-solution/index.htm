@@ -10,15 +10,15 @@
     <div class="wrapper">
         <h1 style = "font-size: 4rem; color:white;">Shopping List</h1>
     <div class="column tobuy" ng-controller = 'buy as buy'>
-        <h2>To Buy List</h2>
+        <h2>To Buy </h2>
         <div class = "message" ng-show = 'buy.buylist.length === 0' style = 'color:green'>
-            Nothing to buy
+            Everything is bought!!!
            </div>
         <ul>
             
             <li ng-repeat = 'item in buy.buylist'>
                 Buy {{item.quantity}} of {{item.name}}   
-                <button ng-click = 'buy.buyit($index)'>BUY</button>
+                <button ng-click = 'buy.buyit($index)'>BOUGHT</button>
             </li> 
             </ul>
            
@@ -27,7 +27,7 @@
     <div class="column bought" ng-controller = 'bought as bought'>
         <h2>Already Bought</h2>
         <div class = "message" ng-show = 'bought.boughtItems.length === 0' style = 'color:red'>
-            Nothing is bought yet</div>
+            Nothing bought yet</div>
         <ul>
                  <li ng-repeat = 'item in bought.boughtItems'>
                  Bought {{item.quantity}} of {{item.name}}
