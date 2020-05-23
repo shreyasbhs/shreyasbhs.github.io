@@ -1,7 +1,12 @@
 <ul> 
+  
     <li ng-repeat ='item in narrow.foundList'>
         
-        {{item.name}} ( {{item.short_name}}) 
+        <span id = "name">{{item.name}}
+        ({{item.short_name}})</span></br>
+        
+         <span id="des">Description : {{item.description}}</span>
+        </br>
         <button id = 'list' ng-click="narrow.onRemove({index: $index});">Don't want this one!</button>
     </li>
 </ul> 
