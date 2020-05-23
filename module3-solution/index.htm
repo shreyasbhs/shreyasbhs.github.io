@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app = "restaurant">
+<head>
+   <script src="angularjs.min.js"></script>
+   <script src="app.js"></script>
+   <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   
+    <div class="container" ng-controller = 'NarrowItDownController as narrow'>
+        <h1>Narrow Down Your Chinese Menu Choice</h1>
+ 
+     <div class="input">
+       <input type="text" placeholder="search term" id = 'search'ng-model  = 'narrow.des'>
+    
+     </div>
+     <div class="form-group narrow-button">
+       <button id = 'narrow' ng-click = 'narrow.narrowing()'>Narrow It Down For Me!</button>
+     </div>
+     <div class="items">
+     <found-items found-list = 'narrow.foundList' on-remove = 'narrow.removeItem(index)'></found-items>
+     <div class="error" ng-show='narrow.foundList.length === 0 '>{{narrow.errorMsg}}</div>
+    </div>
+ 
+ </body>
+</html>
