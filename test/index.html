@@ -8,8 +8,14 @@
     <a-box position='0 0.5 0' material='opacity:1;'>
     
     </a-box>
-    <a-text value="Hello, World!"></a-text>
-    <a-image src = 'bb.jpg'></a-image>
+    {% comment %} <a-text value="Hello, World!"></a-text> {% endcomment %}
+     <a-assets>
+    <img id="my-image" src="bb.jpg">
+     </a-assets>
+
+  <!-- Using the asset management system. -->
+  <a-image src="#my-image"></a-image>
+    {% comment %} <a-image src = 'bb.jpg'></a-image> {% endcomment %}
     <!-- define a camera which will move according to the marker position -->
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
